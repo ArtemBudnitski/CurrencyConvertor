@@ -10,6 +10,7 @@ import com.abudnitski.currencyconversion.domain.CurrencyMapper
 import com.abudnitski.currencyconversion.presentation.list.ListUiStateMapper
 
 class App : Application() {
+    // TODO replace with Hilt https://developer.android.com/training/dependency-injection/hilt-android
     private val apiService: ApiService by lazy {
         ApiClient.retrofit.create(ApiService::class.java)
     }
