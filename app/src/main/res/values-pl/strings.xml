@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Kalkulator walutowy</string>
+    <string name="ok">OK</string>
+    <string name="Warning">Ostrzeżenie!</string>
+    <string name="dialog_zero_message">Nie można dzielić przez zero!😓</string>
+    <string name="preferences_file">plik-preferencji-walutowych</string>
+    <string name="try_again">Spróbuj ponownie!</string>
+    <string name="exit">Wyjście</string>
+    <string name="dialog_title">Brak danych!</string>
+    <string name="dialog_message">Spróbuj ponownie połączyć się z internetem i zaktualizować dzisiejsze dane lub zamknij aplikację!</string>
+    <string name="back">powrót</string>
+    <string name="search">Szukaj</string>
+    <string name="keyboard_equal">"="</string>
+    <string name="keyboard_1">1</string>
+    <string name="keyboard_c">C</string>
+    <string name="keyboard_percentage">%</string>
+    <string name="delete">Usuń</string>
+    <string name="keyboard_division">/</string>
+    <string name="keyboard_7">7</string>
+    <string name="keyboard_8">8</string>
+    <string name="keyboard_9">9</string>
+    <string name="keyboard_multiplication">x</string>
+    <string name="keyboard_4">4</string>
+    <string name="keyboard_5">5</string>
+    <string name="keyboard_6">6</string>
+    <string name="keyboard_minus">-</string>
+    <string name="keyboard_2">2</string>
+    <string name="keyboard_3">3</string>
+    <string name="keyboard_plus">+</string>
+    <string name="keyboard_0">0</string>
+    <string name="keyboard_comma">,</string>
+    <string name="warning">ostrzeżenie</string>
+    <string name="currency_list">Lista walut</string>
+    <string name="currency_conversion">Konwersja Waluty</string>
+</resources>
