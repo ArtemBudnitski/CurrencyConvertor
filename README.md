@@ -59,4 +59,4 @@ Projekt składa się z dwóch głównych modułów: konwertera walut (`CurrencyC
 
 ## Licencja
 
-Ten projekt jest licencjonowany na mocy [Licencji MIT](LICENSE). Możesz swobodnie korzystać, modyfikować i rozpowszechniać kod według własnych potrzeb:)
+Możesz swobodnie korzystać, modyfikować i rozpowszechniać kod według własnych potrzeb:)
