@@ -41,8 +41,6 @@ fun CurrencyApp(
     { padding ->
         NavHost(navController = navController, startDestination = Screen.ConversionUi.route, modifier.padding(padding)) {
             composable(Screen.ConversionUi.route) {
-                val currencyField = it.arguments?.getString(CURRENCY_FIELD_KEY)
-                val currencyCode = it.arguments?.getString(CURRENCY_CODE_KEY)
                 MainScreen(
                     onClickScreenOne = {
                         navController.navigate(
@@ -60,8 +58,6 @@ fun CurrencyApp(
                             )
                         )
                     },
-                    currencyField = currencyField?.toInt(),
-                    currencyCode = currencyCode
                 )
             }
             composable(Screen.ListUi.route) { it ->

@@ -20,21 +20,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.abudnitski.currencyconversion.App
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.abudnitski.currencyconversion.R
 import com.abudnitski.currencyconversion.presentation.list.ListViewModel
-import com.abudnitski.currencyconversion.presentation.list.ListViewModelFactory
+
 
 @Composable
 fun ListScreen(modifier: Modifier = Modifier, onClick: (String) -> Unit, onBackClick: () -> Unit) {
-    val app = LocalContext.current.applicationContext as App
-    val viewModel: ListViewModel = viewModel(factory = ListViewModelFactory(app.repository, app.listUiStateMapper))
+    val viewModel = hiltViewModel<ListViewModel>()
     val listUiState = viewModel.uiState.collectAsState().value
 
     Column(

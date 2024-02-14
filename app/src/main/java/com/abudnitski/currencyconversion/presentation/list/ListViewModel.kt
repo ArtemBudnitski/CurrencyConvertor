@@ -3,12 +3,15 @@ package com.abudnitski.currencyconversion.presentation.list
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.abudnitski.currencyconversion.data.CurrencyRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ListViewModel(
+@HiltViewModel
+class ListViewModel @Inject constructor(
     private val repository: CurrencyRepository,
     private val listUiStateMapper: ListUiStateMapper
 ) : ViewModel() {
@@ -23,8 +26,7 @@ class ListViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             repository.getAllCurrency().collect {
                 val data = listUiStateMapper.map(it)
-                _uiState.value = _uiState.value.copy(items = data)
-                _uiState.value = _uiState.value.copy(filteredItems = data)
+                _uiState.value = _uiState.value.copy(items = data, filteredItems = data)
             }
         }
     }

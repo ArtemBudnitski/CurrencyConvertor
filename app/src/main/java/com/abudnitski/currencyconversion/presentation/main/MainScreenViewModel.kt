@@ -1,20 +1,25 @@
 package com.abudnitski.currencyconversion.presentation.main
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.abudnitski.currencyconversion.data.CurrencyRepository
 import com.abudnitski.currencyconversion.domain.Currency
+import com.abudnitski.currencyconversion.ui.CURRENCY_CODE_KEY
+import com.abudnitski.currencyconversion.ui.CURRENCY_FIELD_KEY
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import java.util.Locale
+import javax.inject.Inject
 
-class MainScreenViewModel(
+@HiltViewModel
+class MainScreenViewModel @Inject constructor(
     private val repository: CurrencyRepository,
-    private val currencyField: Int?,
-    private val currencyCode: String?,
-    private val calculator: Calculator
+    private val calculator: Calculator,
+    private val saveState: SavedStateHandle
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(MainScreenUiState())
@@ -27,8 +32,10 @@ class MainScreenViewModel(
     }
 
     private suspend fun init() {
+        val currencyField = saveState.get<String>(CURRENCY_FIELD_KEY)
+        val currencyCode = saveState.get<String>(CURRENCY_CODE_KEY)
         if (currencyCode != null) {
-            if (currencyField == 1) {
+            if (currencyField?.toInt() == 1) {
                 repository.currentCodeOne = currencyCode
             } else {
                 repository.currentCodeTwo = currencyCode

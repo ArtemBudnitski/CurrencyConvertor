@@ -17,11 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.abudnitski.currencyconversion.App
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.abudnitski.currencyconversion.R
 import com.abudnitski.currencyconversion.presentation.main.MainScreenViewModel
-import com.abudnitski.currencyconversion.presentation.main.MainScreenViewModelFactory
 import com.abudnitski.currencyconversion.ui.dialogAlert.AlertDialogComponent
 
 @Composable
@@ -29,11 +27,8 @@ fun MainScreen(
     modifier: Modifier = Modifier,
     onClickScreenOne: (String) -> Unit,
     onClickScreenTwo: (String) -> Unit,
-    currencyField: Int? = null,
-    currencyCode: String? = null
 ) {
-    val app = LocalContext.current.applicationContext as App
-    val viewModel: MainScreenViewModel = viewModel(factory = MainScreenViewModelFactory(app.repository, currencyField, currencyCode))
+    val viewModel = hiltViewModel<MainScreenViewModel>()
     val screenUiState = viewModel.uiState.collectAsState().value
 
     if (screenUiState.isDataLoading) {
