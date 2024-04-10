@@ -1,7 +1,7 @@
 # Aplikacja Konwerter Walut
 
 | CurrencyConversion | CurrencyList | Search Bar |
-|--------------------|--------------------|--------------------|
+| ---- | ---- | ---- |
 |![pYNqFGQESOnf_1440_2880](https://github.com/ArtemBudnitski/CurrencyConvertor/assets/126951785/8d908059-e037-4d97-8ab8-f4604e374765)|![DD9nFw9PQYCz_1440_2880](https://github.com/ArtemBudnitski/CurrencyConvertor/assets/126951785/294dea41-f716-43e5-9d49-d24a56aab7a9)|![QlyJAZqqrhkL_1440_2880](https://github.com/ArtemBudnitski/CurrencyConvertor/assets/126951785/1135f7ca-7d6a-48e3-8a39-ecdfa4923013)|
 
 
